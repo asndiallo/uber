@@ -17,7 +17,7 @@ import { Link } from "expo-router";
 import Map from "@/components/Map";
 import RideCard from "@/components/RideCard";
 import { SafeAreaView } from "react-native-safe-area-context";
-import useLocationStore from "@/store";
+import { useLocationStore } from "@/store";
 
 const recentRides = [
   {
