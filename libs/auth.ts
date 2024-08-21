@@ -1,5 +1,9 @@
 import * as SecureStore from "expo-secure-store";
 
+/**
+ * SecureStore is a key-value storage system that allows you to save data in a secure way.
+ * It is used to store sensitive data that you want to keep secure, such as user tokens.
+ */
 export const tokenCache = {
   async getToken(key: string) {
     try {
