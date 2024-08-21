@@ -1,5 +1,6 @@
 import CustomButton from "@/components/CustomButton";
 import InputField from "@/components/InputField";
+import OAuth from "@/components/OAuth";
 import { icons, images } from "@/constants";
 import { Link } from "expo-router";
 import { useState } from "react";
@@ -14,6 +15,10 @@ const SignUp = () => {
 
   const onSignUpPress = () => {
     console.log(form);
+  };
+
+  const handleGoogleSignIn = () => {
+    console.log("Google Sign In");
   };
 
   return (
@@ -57,7 +62,22 @@ const SignUp = () => {
             className="mt-6"
           />
 
-          {/*TODO: Add social login buttons */}
+          <OAuth />
+
+          <CustomButton
+            title="Sign Up with Google"
+            IconLeft={() => (
+              <Image
+                source={icons.google}
+                resizeMode="contain"
+                className="w-5 h-5 mx-2"
+              />
+            )}
+            bgVariant="outline"
+            textVariant="primary"
+            className="mt-5 w-full shadow-none"
+            onPress={handleGoogleSignIn}
+          />
 
           <Link
             href="/login"
