@@ -122,7 +122,7 @@ const SignUp = () => {
           />
           <OAuth />
           <Link
-            href="/login"
+            href="/sign-in"
             className="text-lg text-center text-general-200 mt-10"
           >
             Already have an account?{" "}

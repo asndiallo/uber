@@ -72,7 +72,7 @@ const SignIn = () => {
           />
 
           <Link
-            href="/register"
+            href="/sign-up"
             className="text-lg text-center text-general-200 mt-10"
           >
             Don't have an account yet?{" "}
