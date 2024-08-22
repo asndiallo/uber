@@ -108,7 +108,7 @@ const SignUp = () => {
           />
           <InputField
             label="Password"
-            placeholder="Enter your password"
+            placeholder="Enter password"
             icon={icons.lock}
             secureTextEntry={true}
             textContentType="password"
@@ -183,10 +183,7 @@ const SignUp = () => {
             </Text>
             <CustomButton
               title="Browse Home"
-              onPress={() => {
-                setShowSuccessModal(false);
-                router.push(`/(root)/(tabs)/home`);
-              }}
+              onPress={() => router.push(`/(root)/(tabs)/home`)}
               className="mt-5"
             />
           </View>

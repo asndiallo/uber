@@ -39,17 +39,13 @@ const SignIn = () => {
     }
   }, [isLoaded, signIn, form.email, form.password, setActive]);
 
-  const handleGoogleSignIn = () => {
-    console.log("Google Sign In");
-  };
-
   return (
     <ScrollView className="flex-1 bg-white">
       <View className="flex-1 bg-white">
         <View className="relative w-full h-[250px]">
           <Image source={images.signUpCar} className="z-0 w-full h-[250px]" />
           <Text className="text-2xl text-black font-JakartaSemiBold absolute bottom-5 left-5">
-            Welcome back 👋
+            Welcome 👋
           </Text>
         </View>
 
@@ -62,15 +58,17 @@ const SignIn = () => {
             value={form.email}
             onChangeText={(value) => setForm({ ...form, email: value })}
           />
+
           <InputField
             label="Password"
-            placeholder="Enter your password"
+            placeholder="Enter password"
             icon={icons.lock}
             secureTextEntry={true}
             textContentType="password"
             value={form.password}
             onChangeText={(value) => setForm({ ...form, password: value })}
           />
+
           <CustomButton
             title="Sign In"
             onPress={onSignInPress}
@@ -79,26 +77,11 @@ const SignIn = () => {
 
           <OAuth />
 
-          <CustomButton
-            title="Sign In with Google"
-            IconLeft={() => (
-              <Image
-                source={icons.google}
-                resizeMode="contain"
-                className="w-5 h-5 mx-2"
-              />
-            )}
-            bgVariant="outline"
-            textVariant="primary"
-            className="mt-5 w-full shadow-none"
-            onPress={handleGoogleSignIn}
-          />
-
           <Link
             href="/sign-up"
             className="text-lg text-center text-general-200 mt-10"
           >
-            Don't have an account yet?{" "}
+            Don't have an account?{" "}
             <Text className="text-primary-500">Sign Up</Text>
           </Link>
         </View>
