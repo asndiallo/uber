@@ -18,6 +18,9 @@ const OAuth = () => {
     }
 
     Alert.alert(result.success ? "Success" : "Error", result.message);
+    if (result.success && result.code !== "user_created") {
+      router.replace("/(root)/(tabs)/home");
+    }
   };
 
   return (
