@@ -53,7 +53,7 @@ const Payment = ({
         },
         confirmHandler: async (
           paymentMethod,
-          shouldSavePaymentMethod,
+          _shouldSavePaymentMethod,
           intentCreationCallback,
         ) => {
           const { paymentIntent, customer } = await fetchAPI(

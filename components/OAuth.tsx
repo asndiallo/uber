@@ -6,7 +6,7 @@ import { icons } from "@/constants";
 import { router } from "expo-router";
 import { useOAuth } from "@clerk/clerk-expo";
 
-const OAuth = () => {
+const OAuth = ({ buttonTitle }: { buttonTitle: string }) => {
   const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
 
   const handleGoogleSignIn = async () => {
@@ -32,7 +32,7 @@ const OAuth = () => {
       </View>
 
       <CustomButton
-        title="Log In with Google"
+        title={buttonTitle}
         className="mt-5 w-full shadow-none"
         IconLeft={() => (
           <Image
