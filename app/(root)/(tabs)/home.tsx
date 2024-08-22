@@ -8,12 +8,12 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { Link, router } from "expo-router";
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-expo";
 import { icons, images } from "@/constants";
 import { useEffect, useState } from "react";
 
 import GoogleTextInput from "@/components/GoogleTextInput";
-import { Link } from "expo-router";
 import Map from "@/components/Map";
 import RideCard from "@/components/RideCard";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -137,8 +137,14 @@ export default function Page() {
     console.log("Sign out");
   };
 
-  const handleDestinationPress = () => {
-    console.log("Search");
+  const handleDestinationPress = (location: {
+    latitude: number;
+    longitude: number;
+    address: string;
+  }) => {
+    setDestinationLocation(location);
+
+    router.push("/(root)/find-ride");
   };
 
   useEffect(() => {
