@@ -1,10 +1,5 @@
 import { Ride } from "@/types/type";
 
-/**
- * Sort rides by date
- * @param rides - Array of rides
- * @returns Sorted array of rides
- */
 export const sortRides = (rides: Ride[]): Ride[] => {
   const result = rides.sort((a, b) => {
     const dateA = new Date(`${a.created_at}T${a.ride_time}`);
@@ -15,11 +10,6 @@ export const sortRides = (rides: Ride[]): Ride[] => {
   return result.reverse();
 };
 
-/**
- * Format time to human readable format
- * @param minutes - Time in minutes
- * @returns Formatted time
- */
 export function formatTime(minutes: number): string {
   const formattedMinutes = +minutes?.toFixed(0) || 0;
 
@@ -32,11 +22,6 @@ export function formatTime(minutes: number): string {
   }
 }
 
-/**
- * Format date to human readable format
- * @param dateString - Date string
- * @returns Formatted date
- */
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);
   const day = date.getDate();

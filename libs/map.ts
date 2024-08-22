@@ -1,14 +1,7 @@
 import { Driver, MarkerData } from "@/types/type";
 
-const directionsAPI = process.env.EXPO_PUBLIC_GOOGLE_API_KEY;
+const directionsAPI = process.env.EXPO_PUBLIC_DIRECTIONS_API_KEY;
 
-/**
- * Generate random markers for the map
- * @param data - Array of drivers
- * @param userLatitude - User's latitude
- * @param userLongitude - User's longitude
- * @returns Array of markers
- */
 export const generateMarkersFromData = ({
   data,
   userLatitude,
@@ -31,14 +24,6 @@ export const generateMarkersFromData = ({
   });
 };
 
-/**
- * Calculate the region for the map view
- * @param userLatitude - User's latitude
- * @param userLongitude - User's longitude
- * @param destinationLatitude - Destination's latitude
- * @param destinationLongitude - Destination's longitude
- * @returns Region object
- */
 export const calculateRegion = ({
   userLatitude,
   userLongitude,
@@ -87,16 +72,6 @@ export const calculateRegion = ({
   };
 };
 
-/**
- * Calculate the time and price for each driver
- * @param markers - Array of markers
- * @param userLatitude - User's latitude
- * @param userLongitude - User's longitude
- * @param destinationLatitude - Destination's latitude
- * @param destinationLongitude - Destination's longitude
- * @returns Array of markers with time and price
- * @throws Error if there is an issue with the API
- */
 export const calculateDriverTimes = async ({
   markers,
   userLatitude,
