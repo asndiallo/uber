@@ -72,6 +72,7 @@ const GoogleTextInput = ({
           placeholderTextColor: "gray",
           placeholder: initialLocation ?? "Where do you want to go?",
         }}
+        enablePoweredByContainer={false}
       />
     </View>
   );
